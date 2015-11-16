@@ -15,9 +15,6 @@
  */
 package cn.queen.java.io.fileinputstream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * @version 0.1
  *
@@ -26,40 +23,32 @@ import org.slf4j.LoggerFactory;
  * @since Nov 15, 2015
  */
 import java.io.*;
-
-public class CopyFile {
-	private Logger log = LoggerFactory.getLogger(CopyFile.class);
-
-	public void copy(String from, String to) {
-		log.info("Form: {}, To: {}", from, to);
+public class SkipBytes {
+	public void skipBytes(String path, String to) {
+		File file = new File(path);
 		FileInputStream fis = null;
 		FileOutputStream fos = null;
-		File file = new File(from);
 		try {
 			fis = new FileInputStream(file);
 			fos = new FileOutputStream(to);
-			byte[] bytes = new byte[1024];
 			int temp = 0;
+		//	跳过开始的4个字节
+			fis.skip(4);
+			byte[] bytes = new byte[1024];
 			temp = fis.read(bytes);
 			fos.write(bytes, 0, temp);
 			fos.flush();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
-			e.printStackTrace();
-
 		}
 		try {
 			fis.close();
+
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 		try {
 			fos.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
-
 	}
-
 }

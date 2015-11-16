@@ -15,39 +15,39 @@
  */
 package cn.queen.java.io.fileinputstream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * @version 0.1
  *
  * @author Jie Wang
  *
- * @since Nov 15, 2015
+ * @since Nov 16, 2015
  */
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 
-public class CopyFile {
-	private Logger log = LoggerFactory.getLogger(CopyFile.class);
+public class CopyOneFile {
+	private Logger log = LoggerFactory.getLogger(CopyOneFile.class);
+	FileInputStream fis = null;
+	FileOutputStream fos = null;
 
-	public void copy(String from, String to) {
+	public void copyOneFile(String from, String to) {
 		log.info("Form: {}, To: {}", from, to);
-		FileInputStream fis = null;
-		FileOutputStream fos = null;
-		File file = new File(from);
 		try {
+			File file = new File(from);
 			fis = new FileInputStream(file);
 			fos = new FileOutputStream(to);
 			byte[] bytes = new byte[1024];
 			int temp = 0;
-			temp = fis.read(bytes);
-			fos.write(bytes, 0, temp);
+			while ((temp = fis.read(bytes)) >0) {
+				fos.write(bytes, 0, temp);
 			fos.flush();
+			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-
 		}
 		try {
 			fis.close();
@@ -61,5 +61,4 @@ public class CopyFile {
 		}
 
 	}
-
 }

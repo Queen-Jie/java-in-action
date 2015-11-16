@@ -1,0 +1,71 @@
+15:33:11,344  INFO CopyFile:37 - Form: AA, To: BBB
+15:50:18,921  INFO CopyFile:38 - Form: AA, To: BBB
+15:51:38,012  INFO CopyFile:38 - Form: e:/abc.txt, To: f:/abc.txt
+15:54:02,140  INFO CopyFile:38 - Form: e:/abc.txt, To: f:/abc.txt
+15:54:42,534  INFO CopyFile:38 - Form: e:/abc.txt, To: f:/abc.txt
+16:01:14,375  INFO CopyFile:38 - Form: e:/abc.txt, To: f:/abc.txt
+16:01:59,741  INFO CopyFile:38 - Form: e:/abc.txt, To: f:/abc.txt
+16:33:58,540  INFO ReadFileUsingInputStream:35 - e:/abc.txt文件已读取
+17:16:58,636  INFO ReadFileUsingInputStream:40 - e:/abc.txt文件已读取
+17:17:19,874  INFO ReadFileUsingInputStream:40 - e:/abc.txt文件已读取
+17:42:58,493  INFO ReadFileUsingInputStream:40 - e:/abc.txt文件已读取
+17:45:32,126  INFO ReadFileUsingInputStream:40 - e:/abc.txt文件已读取
+14:09:48,948  INFO CopyOneFile:36 - Form: e:/abc.txt, To: f:/abc.txt
+14:12:38,070  INFO CopyOneFile:36 - Form: e:/abc.txt, To: f:/abc.txt
+14:17:14,430  INFO CopyOneFile:36 - Form: e:/abc.txt, To: d:/abc.txt
+14:20:07,639  INFO CopyOneFile:36 - Form: e:/abc.txt, To: d:/abc.txt
+14:21:00,852  INFO CopyOneFile:36 - Form: e:/abc.txt, To: d:/abc.txt
+16:06:28,938  INFO CopyFileWithChannel:39 - from:e:/abc.txt,to:f:/abc.txt
+16:36:13,052  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:36:13,068  INFO ReadBytes:51 - %02X 
+16:37:31,408  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,423  INFO ReadBytes:51 - %02X 
+16:37:31,439  INFO ReadBytes:51 - %02X 
+16:37:31,439  INFO ReadBytes:51 - %02X 
+16:37:31,439  INFO ReadBytes:51 - %02X 
+16:37:31,439  INFO ReadBytes:51 - %02X 
+16:37:31,439  INFO ReadBytes:51 - %02X 
+21:19:47,116  INFO ReadByteFromFile:32 - 读取成功！

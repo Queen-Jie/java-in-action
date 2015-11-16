@@ -15,51 +15,51 @@
  */
 package cn.queen.java.io.fileinputstream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * @version 0.1
  *
  * @author Jie Wang
  *
- * @since Nov 15, 2015
+ * @since Nov 16, 2015
  */
-import java.io.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class CopyFile {
-	private Logger log = LoggerFactory.getLogger(CopyFile.class);
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 
-	public void copy(String from, String to) {
-		log.info("Form: {}, To: {}", from, to);
-		FileInputStream fis = null;
-		FileOutputStream fos = null;
-		File file = new File(from);
+public class CopyFileWithChannel {
+	private Logger log = LoggerFactory.getLogger(CopyFileWithChannel.class);
+
+	// java.io.FileOutputStream.getChannel() 方法返回与此文件输出流关联的唯一文件通道对象。
+	public void copyFileWithChannel(String from, String to) {
+		log.info("from:{},to:{}", from, to);
+		FileChannel srcChannel = null;
+		FileChannel dstChannel = null;
 		try {
-			fis = new FileInputStream(file);
-			fos = new FileOutputStream(to);
-			byte[] bytes = new byte[1024];
-			int temp = 0;
-			temp = fis.read(bytes);
-			fos.write(bytes, 0, temp);
-			fos.flush();
+			srcChannel = new FileInputStream(from).getChannel();
+			dstChannel = new FileOutputStream(to).getChannel();
+			// 将一个通道和另一个通道直接相连,这样很容易实现文件拷贝的功能
+			dstChannel.transferFrom(srcChannel, 0, srcChannel.size());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-
 		}
+
 		try {
-			fis.close();
+			srcChannel.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		try {
-			fos.close();
+			dstChannel.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 	}
-
 }
