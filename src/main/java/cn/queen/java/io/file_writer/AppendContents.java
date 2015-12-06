@@ -13,52 +13,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.queen.java.io.fileinputstream;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package cn.queen.java.io.file_writer;
 
 /**
  * @version 0.1
  *
  * @author Jie Wang
  *
- * @since Nov 15, 2015
+ * @since Nov 25, 2015
+ * Append or add some contents to the file
+ * 在文件中添加内容
  */
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
-public class CopyFile {
-	private Logger log = LoggerFactory.getLogger(CopyFile.class);
-
-	public void copy(String from, String to) {
-		log.info("Form: {}, To: {}", from, to);
-		FileInputStream fis = null;
-		FileOutputStream fos = null;
-		File file = new File(from);
+public class AppendContents {
+	public static void main(String[] args) {
+		File file = new File("f:/bc.txt");
+		FileWriter fw = null;
 		try {
-			fis = new FileInputStream(file);
-			fos = new FileOutputStream(to);
-			byte[] bytes = new byte[1024];
-			int temp = 0;
-			temp = fis.read(bytes);
-			fos.write(bytes, 0, temp);
-			fos.flush();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-
-		}
-		try {
-			fis.close();
+			fw = new FileWriter(file, true);
+			fw.append("Usename:java  Password:secret"
+					+ System.getProperty("line.seperator"));
+			//System.getProperty(String key);获取用指定键描述的系统属性。 。
+			fw.flush();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		try {
-			fos.close();
+			fw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
 }
